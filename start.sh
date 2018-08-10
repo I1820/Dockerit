@@ -12,8 +12,6 @@ start-loraserver() {
 }
 
 start-lanserver() {
-	local name=""
-
         docker-compose -f lanserver/docker-compose.yml $@
 }
 
@@ -30,38 +28,13 @@ start-pm() {
         docker-compose -f pm/docker-compose.yml $@
 }
 
-start-dm() {
-        docker-compose -f dm/docker-compose.yml $@
-}
-
-start-uplink() {
-        docker-compose -f uplink/docker-compose.yml $@
-}
-
-start-downlink() {
-        docker-compose -f downlink/docker-compose.yml $@
-}
-
-start-redis() {
-        docker-compose -f redis/docker-compose.yml $@
-}
-
 start-prometheus() {
         docker-compose -f prometheus/docker-compose.yml $@
 }
 
 start-portainer() {
-        local name=""
-
         docker-compose -f portainer/docker-compose.yml $@
 }
-
-start-gm() {
-        local name=""
-
-        docker-compose -f gm/docker-compose.yml $@
-}
-
 
 start-uprojects() {
         # el (project) containers
@@ -81,20 +54,22 @@ usage() {
         echo "usage: start.sh <service> [args]"
         echo "services:"
 
-        echo "mongodb           docker-compose mongodb"
-        echo "loraserver        docker-compose brocaar/loraserver"
+        echo "additional:"
         echo "prometheus        docker-compose prom/prometheus"
         echo "portainer         docker-compose portainer/portainer"
+        echo "uprojects         starts the i1820 project/redis dockers"
+        echo "cleanup           cleans the projects up"
         echo
-        echo "dm         docker-compose aiotrc/dm"
-        echo "pm         docker-compose aiotrc/pm"
-        echo "gm         docker-compose aiotrc/gm"
-        echo "uplink     docker-compose aiotrc/uplink"
-        echo "downlink   docker-compose aiotrc/downlink"
-        echo "lanserver  docker-compose aiotrc/lanserver"
+        echo "required:"
+        echo "mongodb    docker-compose mongodb"
         echo
-        echo "uprojects platfrom users project/redis dockers"
-        echo "cleanup   cleans the database up"
+        echo "i1820:"
+        echo "pm         docker-compose i1820/pm"
+        echo
+        echo "protocols:"
+        echo "lanserver         docker-compose i1820/lanserver"
+        echo "loraserver        docker-compose brocaar/loraserver"
+        echo
 }
 
 if [[ $# -eq 0 ]]; then
