@@ -1,8 +1,9 @@
-version: "2"
+version: "3"
 
 services:
   pm:
-    image: aiotrc/pm
+    image: i1820/pm
+    restart: always
     environment:
       - PORT=8080
       - ADDR=0.0.0.0
