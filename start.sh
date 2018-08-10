@@ -72,6 +72,8 @@ usage() {
         echo
 }
 
+echo "Welcome to I1820 Dockerit"
+
 if [[ $# -eq 0 ]]; then
         usage
         exit
