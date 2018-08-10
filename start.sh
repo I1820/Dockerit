@@ -21,7 +21,7 @@ start-mongodb() {
 
 start-pm() {
         # please wait for requirements
-        docker pull aiotrc/gorunner
+        docker pull i1820/elrunner
         docker pull redis:alpine
         docker network create isrc
 
