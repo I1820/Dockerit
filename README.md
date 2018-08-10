@@ -1,8 +1,10 @@
-# Server
+# Dockerit
 ## Introduction
-ISRC Platform server configuration.
+Run I1820 on dockers with no pain.
+I1820 works with LoRa and LAN protocol
+so run them by your choices.
 
-## 1995parham Backends
+## I1820 Services
 
 | Service          | Abbr     | Port |
 | ---------------- |:--------:| ----:|
@@ -10,31 +12,6 @@ ISRC Platform server configuration.
 | Downlink         | downlink | 1373 |
 | Data Manager     | dm       | 1372 |
 | Gateway Manager  | gm       | 1374 |
-
-
-## sajjad Backend
-
-1. Clone `backend` into `backend/hosts`
-
-```sh
-git clone git@github.com:aiotrc/backend backend/hosts/
-```
-
-2. Create `.env` file and config it
-
-```sh
-cp backend/hosts/backend/.env.example backend/hosts/backend/.env
-```
-
-3. Run `docker-compose`
-
-```sh
-docker-compose up -d
-```
-
-4. Run `composer install` inside `web` container
-
-5. Run `php artisan key:generate` inside `web` container
 
 ## LoRa Server Docker setup
 
