@@ -2,7 +2,7 @@ version: "2"
 
 services:
   lanserver:
-    image: aiotrc/lanserver
+    image: i1820/lanserver
     restart: always
     environment:
       - PORT=4000
