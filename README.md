@@ -1,5 +1,5 @@
 # Dockerit
-[![Travis branch](https://img.shields.io/travis/I1820/dockerit/master.svg?style=flat-square)](https://travis-ci.org/I1820/dockerit)
+[![Travis branch](https://img.shields.io/travis/I1820/Dockerit/master.svg?style=flat-square)](https://travis-ci.org/I1820/Dockerit)
 
 ## Introduction
 Run I1820 on dockers with no pain.
