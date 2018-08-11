@@ -20,10 +20,14 @@ start-mongodb() {
 }
 
 start-pm() {
-        # please wait for requirements
-        docker pull i1820/elrunner
-        docker pull redis:alpine
-        docker network create isrc
+	local confirm
+	if [[ $1 == "up" ]]; then
+		read -p "do you want to download pm required dockers? [Y/n] " -n 1 confirm; echo
+        	if [[ $confirm == "Y" ]]; then
+        		docker pull i1820/elrunner
+			docker pull redis:alpine
+        	fi
+	fi
 
         docker-compose -f pm/docker-compose.yml $@
 }
