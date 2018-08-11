@@ -20,6 +20,7 @@ start-mongodb() {
 }
 
 start-pm() {
+        docker network create i1820
 	local confirm
 	if [[ $1 == "up" ]]; then
 		read -p "do you want to download pm required dockers? [Y/n] " -n 1 confirm; echo
