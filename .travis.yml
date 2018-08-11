@@ -14,7 +14,6 @@ before_install:
 
 script:
   - |
-    modules=$(ls -d */)
-    for module in ${modules[@]}; do
+    for module in $(ls -d */); do
       cd $module && docker-compose config && cd -
     done
