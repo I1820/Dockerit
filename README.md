@@ -15,6 +15,10 @@ so run them by your choices.
 | Data Manager     | dm       | 1372 |
 | Gateway Manager  | gm       | 1374 |
 
+## MQTT Link
+I1820 support many protocols like lan and lora,
+These protocols send and receive data using mqtt.
+
 ## LoRa Server Docker setup
 
 This repository contains a skeleton to setup the [LoRa Server](https://www.loraserver.io)
