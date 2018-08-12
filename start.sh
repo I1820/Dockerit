@@ -7,6 +7,14 @@
 #
 # [] Created By : Parham Alvani <parham.alvani@gmail.com>
 # =======================================
+start-vernemq() {
+        docker-compose -f vernemq/docker-compose.yml $@
+}
+
+start-vmq-admin() {
+        docker-compose -f vernemq/docker-compose.yml exec vernemq vmq-admin $@
+}
+
 start-loraserver() {
         docker-compose -f loraserver.io/docker-compose.yml $@
 }
@@ -64,9 +72,11 @@ usage() {
         echo "portainer         docker-compose portainer/portainer"
         echo "upstart           starts the i1820 project/redis dockers"
         echo "upremove          removes the i1820 project/redis dockers"
+        echo "vmq-admin         vernemq live administration"
         echo
         echo "required:"
         echo "mongodb    docker-compose mongodb"
+        echo "vernemq    docker-compose erlio/docker-vernemq"
         echo
         echo "i1820:"
         echo "pm         docker-compose i1820/pm"
