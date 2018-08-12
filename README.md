@@ -8,18 +8,22 @@ so run them by your choices.
 
 ## I1820 Services
 
-| Service          | Abbr     | Port |
-| ---------------- |:--------:| ----:|
-| Project Manager  | pm       | 8080 |
-| Downlink         | downlink | 1373 |
-| Data Manager     | dm       | 1372 |
-| Gateway Manager  | gm       | 1374 |
+| Service          | Abbr     | Port     |
+| ---------------- |:--------:| --------:|
+| Project Manager  | pm       | 8080/tcp |
+| Downlink         | downlink | 1374/tcp |
 
 ## MQTT Link
 I1820 support many protocols like lan and lora,
 These protocols send and receive data using mqtt.
 
 ## LoRa Server Docker setup
+
+| Service          | Port     |
+| ---------------- | --------:|
+| App Server       | 7070/tcp |
+| Gateway Bridge   | 1700/udp |
+
 
 This repository contains a skeleton to setup the [LoRa Server](https://www.loraserver.io)
 project using [docker-compose](https://docs.docker.com/compose/).
