@@ -41,18 +41,18 @@ start-portainer() {
         docker-compose -f portainer/docker-compose.yml $@
 }
 
-start-uprojects() {
+start-upstart() {
         # el (project) containers
         docker ps -a --filter name="el_*" --format "{{.ID}}" | xargs docker start
         # rd (redis) containers
         docker ps -a --filter name="rd_*" --format "{{.ID}}" | xargs docker start
 }
 
-start-cleanup() {
-        for name in $(curl -s "127.0.0.1:8080/api/project" | jq -r '.[].name'); do
-	        echo $name
-	        curl -X DELETE -o /dev/null -w "%{http_code}" -s "127.0.0.1:8080/api/project/$name"
-        done
+start-upremove() {
+        # el (project) containers
+        docker ps -a --filter name="el_*" --format "{{.ID}}" | xargs docker rm -f
+        # rd (redis) containers
+        docker ps -a --filter name="rd_*" --format "{{.ID}}" | xargs docker rm -f
 }
 
 usage() {
@@ -62,8 +62,8 @@ usage() {
         echo "additional:"
         echo "prometheus        docker-compose prom/prometheus"
         echo "portainer         docker-compose portainer/portainer"
-        echo "uprojects         starts the i1820 project/redis dockers"
-        echo "cleanup           cleans the projects up"
+        echo "upstart           starts the i1820 project/redis dockers"
+        echo "upremove          removes the i1820 project/redis dockers"
         echo
         echo "required:"
         echo "mongodb    docker-compose mongodb"
