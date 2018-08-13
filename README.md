@@ -8,10 +8,11 @@ so run them by your choices.
 
 ## I1820 Services
 
-| Service          | Abbr     | Port     |
-| ---------------- |:--------:| --------:|
-| Project Manager  | pm       | 8080/tcp |
-| Downlink         | downlink | 1374/tcp |
+| Service          | Abbr  | Port     |
+| ---------------- |:-----:| --------:|
+| Project Manager  | pm    | 8080/tcp |
+| Link             | link  | 1372/tcp |
+| Data Manager     | dm    | 1373/tcp |
 
 ## MQTT Link
 I1820 support many protocols like lan and lora,
