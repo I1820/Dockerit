@@ -1,19 +1,19 @@
-version: "2"	
+version: "3"
 
 services:
-  link:	
-    image: I1820/link
-    restart: always	
-    environment:	
+  link:
+    image: i1820/link
+    restart: always
+    environment:
       - BROKER_URL=172.17.0.1:1883
       - DB_URL=mongodb://172.17.0.1
       - PM_URL=http://172.17.0.1:8080
     ports:
-      1372:1372
+      - 1372:1372
 
   uplink:
-    image: I1820/link
-    environment:	
+    image: i1820/link
+    environment:
       - BROKER_URL=172.17.0.1:1883
       - DB_URL=mongodb://172.17.0.1
       - PM_URL=http://172.17.0.1:8080
