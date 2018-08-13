@@ -27,6 +27,10 @@ start-mongodb() {
         docker-compose -f mongodb/docker-compose.yml $@
 }
 
+start-link() {
+        docker-compose -f link/docker-compose.yml $@
+}
+
 start-pm() {
         docker network create i1820
 	local confirm
@@ -80,6 +84,7 @@ usage() {
         echo
         echo "i1820:"
         echo "pm         docker-compose i1820/pm"
+        echo "link       docker-compose i1820/link"
         echo
         echo "protocols:"
         echo "lanserver         docker-compose i1820/lanserver"
