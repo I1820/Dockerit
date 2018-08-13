@@ -3,6 +3,7 @@ version: "3"
 services:
   vernemq:
     image: erlio/docker-vernemq
+    restart: always
     ports:
       - 1883:1883
     environment:
