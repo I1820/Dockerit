@@ -104,7 +104,7 @@ if [ $(type -t start-$cmd)"" = 'function' ]; then
         "start-$cmd" "$@"
 
         echo
-        took=$(( $(date +'%s') - $start ))
+        took=$(( $(date +'%s') - start ))
         printf "Done. Took %ds.\n" $took
 else
         echo "Unknown service: $cmd"
