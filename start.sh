@@ -49,6 +49,10 @@ start-prometheus() {
         docker-compose -f prometheus/docker-compose.yml $@
 }
 
+start-grafana() {
+        docker-compose -f grafana/docker-compose.yml $@
+}
+
 start-portainer() {
         docker-compose -f portainer/docker-compose.yml $@
 }
@@ -72,6 +76,7 @@ usage() {
         echo "services:"
 
         echo "additional:"
+        echo "grafana           docker-compose grafana/grafana"
         echo "prometheus        docker-compose prom/prometheus"
         echo "portainer         docker-compose portainer/portainer"
         echo "upstart           starts the i1820 project/redis dockers"
