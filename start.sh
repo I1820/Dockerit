@@ -32,7 +32,7 @@ start-link() {
 }
 
 start-pm() {
-        docker network create i1820
+        docker network create -d bridge --subnet 192.168.72.0/24 --gateway 192.168.72.1 i1820
 	local confirm
 	if [[ $1 == "up" ]]; then
 		read -p "do you want to download pm required dockers? [Y/n] " -n 1 confirm; echo
