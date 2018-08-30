@@ -1,6 +1,6 @@
 # Dockerit
 [![Travis branch](https://img.shields.io/travis/com/I1820/Dockerit/master.svg?style=flat-square)](https://travis-ci.com/I1820/Dockerit)
-[![Codacy Badge](https://img.shields.io/codacy/grade/9168e7dc29d14988b4cd631bf667449a.svg?style=flat-square)](https://www.codacy.com/project/i1820/Dockerit/dashboard)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9168e7dc29d14988b4cd631bf667449a)](https://www.codacy.com/app/i1820/Dockerit?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=I1820/Dockerit&amp;utm_campaign=Badge_Grade)
 
 ## Introduction
 Run I1820 on dockers with no pain.
