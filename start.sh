@@ -33,6 +33,10 @@ start-link() {
         docker-compose -f link/docker-compose.yml $@
 }
 
+start-emq() {
+        emq/emq.sh $@
+}
+
 start-pm() {
         docker network create -d bridge --subnet 192.168.72.0/24 --gateway 192.168.72.1 i1820
 	local confirm
@@ -87,6 +91,7 @@ usage() {
         echo
         echo "required:"
         echo "mongodb    docker-compose mongodb"
+        echo "emq        EMQ The Massively Scalable MQTT Broker"
         # echo "vernemq    docker-compose erlio/docker-vernemq"
         echo
         echo "i1820:"
