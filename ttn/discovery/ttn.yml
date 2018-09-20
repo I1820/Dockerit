@@ -1,0 +1,11 @@
+id: mynetwork-discovery
+tls: true
+key-dir: discovery/
+auth-servers:
+  ttn-account-v2: "https://account.thethingsnetwork.org"
+  local: "file://discovery/server.pub"
+
+discovery:
+  master-auth-servers:
+  - ttn-account-v2
+  - local
