@@ -33,6 +33,10 @@ start-link() {
         docker-compose -f link/docker-compose.yml $@
 }
 
+start-redis() {
+        docker-compose -f redis/docker-compose.yml $@
+}
+
 start-emq() {
         emq/emq.sh $@
 }
@@ -92,6 +96,7 @@ usage() {
         echo "required:"
         echo "mongodb    docker-compose mongodb"
         echo "emq        EMQ The Massively Scalable MQTT Broker"
+        echo "redis      docker-compose redis:alpine"
         # echo "vernemq    docker-compose erlio/docker-vernemq"
         echo
         echo "i1820:"
