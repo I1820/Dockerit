@@ -11,7 +11,7 @@ so run them by your choices.
 
 | Service          | Abbr  | Port     |
 | ---------------- |:-----:| --------:|
-| Project Manager  | pm    | 8080/tcp |
+| Project Manager  | pm    | 1375/tcp |
 | Link             | link  | 1372/tcp |
 | Data Manager     | dm    | 1373/tcp |
 
