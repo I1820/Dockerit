@@ -6,5 +6,6 @@ services:
     restart: always
     ports:
       - 1883:1883
-    environment:
-      - "DOCKER_VERNEMQ_ALLOW_ANONYMOUS=on"
+      - 18083:18083
+    volumes:
+      - ./configuration/vernemq.conf:/etc/vernemq/vernemq.conf
