@@ -8,12 +8,10 @@
 # [] Created By : Parham Alvani <parham.alvani@gmail.com>
 # =======================================
 start-vernemq() {
-        # deprecated
         docker-compose -f vernemq/docker-compose.yml $@
 }
 
 start-vmq-admin() {
-        # deprecated
         docker-compose -f vernemq/docker-compose.yml exec vernemq vmq-admin $@
 }
 
@@ -35,10 +33,6 @@ start-link() {
 
 start-redis() {
         docker-compose -f redis/docker-compose.yml $@
-}
-
-start-emq() {
-        emq/emq.sh $@
 }
 
 start-pm() {
@@ -91,13 +85,12 @@ usage() {
         echo "portainer         docker-compose portainer/portainer"
         echo "upstart           starts the i1820 project/redis dockers"
         echo "upremove          removes the i1820 project/redis dockers"
-        # echo "vmq-admin         vernemq live administration"
+        echo "vmq-admin         vernemq live administration"
         echo
         echo "required:"
         echo "mongodb    docker-compose mongodb"
-        echo "emq        EMQ The Massively Scalable MQTT Broker"
         echo "redis      docker-compose redis:alpine"
-        # echo "vernemq    docker-compose erlio/docker-vernemq"
+        echo "vernemq    docker-compose erlio/docker-vernemq"
         echo
         echo "i1820:"
         echo "pm         docker-compose i1820/pm"
