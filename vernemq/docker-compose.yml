@@ -7,6 +7,7 @@ services:
     ports:
       - 1883:1883
       - 18083:18083
+      - 8888:8888
     environment:
       - "DOCKER_VERNEMQ_ALLOW_ANONYMOUS=on"
       - "DOCKER_VERNEMQ_LISTENER.http.default=0.0.0.0:8888"
