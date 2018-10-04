@@ -9,6 +9,7 @@ services:
       - 18083:18083
     environment:
       - "DOCKER_VERNEMQ_ALLOW_ANONYMOUS=on"
+      - "DOCKER_VERNEMQ_LISTENER.http.default=0.0.0.0:8888"
       - "DOCKER_VERNEMQ_LISTENER.tcp.i1820=0.0.0.0:18083"
       - "DOCKER_VERNEMQ_LISTENER.tcp.i1820.mountpoint=i1820"
       - "DOCKER_VERNEMQ_PLUGINS.vmq_passwd=off"
