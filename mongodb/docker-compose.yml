@@ -8,3 +8,10 @@ services:
       - 27017:27017
     volumes:
       - ./mongo/data:/data/db
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    links:
+      - mongodb:mongo
