@@ -18,8 +18,8 @@ services:
       - "DOCKER_VERNEMQ_LISTENER.tcp.nr_of_acceptors=100"
       - "DOCKER_VERNEMQ_LISTENER.tcp.i1820=0.0.0.0:18083"
       - "DOCKER_VERNEMQ_LISTENER.tcp.i1820.mountpoint=i1820"
-      - "DOCKER_VERNEMQ_PLUGINS.vmq_passwd=off"
-      - "DOCKER_VERNEMQ_PLUGINS.vmq_acl=off"
+      - "DOCKER_VERNEMQ_PLUGINS.vmq_passwd=on"
+      - "DOCKER_VERNEMQ_PLUGINS.vmq_acl=on"
       - "DOCKER_VERNEMQ_PLUGINS.vmq_webhooks=on"
         # disables auth-on-publish for now. I think we need a new design here
         # - "DOCKER_VERNEMQ_VMQ_WEBHOOKS.i1820_auth_publish.hook=auth_on_publish"
