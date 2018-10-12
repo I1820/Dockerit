@@ -10,7 +10,8 @@ services:
       - 8888:8888
     environment:
       - "DOCKER_VERNEMQ_ALLOW_ANONYMOUS=on"
-      - "DOCKER_VERNEMQ_LISTENER.http.default=0.0.0.0:8888"
+      - "DOCKER_VERNEMQ_LISTENER.tcp.max_connections=10000"
+      - "DOCKER_VERNEMQ_LISTENER.tcp.nr_of_acceptors=100"
       - "DOCKER_VERNEMQ_LISTENER.tcp.i1820=0.0.0.0:18083"
       - "DOCKER_VERNEMQ_LISTENER.tcp.i1820.mountpoint=i1820"
       - "DOCKER_VERNEMQ_PLUGINS.vmq_passwd=off"
