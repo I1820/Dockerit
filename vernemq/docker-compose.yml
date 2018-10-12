@@ -4,6 +4,10 @@ services:
   vernemq:
     image: erlio/docker-vernemq
     restart: always
+    ulimits:
+      nofile:
+        soft: 4096
+        hard: 65536
     ports:
       - 1883:1883
       - 18083:18083
