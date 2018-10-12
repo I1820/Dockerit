@@ -4,13 +4,18 @@ services:
   vernemq:
     image: erlio/docker-vernemq
     restart: always
+    ulimits:
+      nofile:
+        soft: 4096
+        hard: 65536
     ports:
       - 1883:1883
       - 18083:18083
       - 8888:8888
     environment:
       - "DOCKER_VERNEMQ_ALLOW_ANONYMOUS=on"
-      - "DOCKER_VERNEMQ_LISTENER.http.default=0.0.0.0:8888"
+      - "DOCKER_VERNEMQ_LISTENER.tcp.max_connections=10000"
+      - "DOCKER_VERNEMQ_LISTENER.tcp.nr_of_acceptors=100"
       - "DOCKER_VERNEMQ_LISTENER.tcp.i1820=0.0.0.0:18083"
       - "DOCKER_VERNEMQ_LISTENER.tcp.i1820.mountpoint=i1820"
       - "DOCKER_VERNEMQ_PLUGINS.vmq_passwd=off"
