@@ -6,7 +6,7 @@ services:
     restart: always
     ulimits:
       nofile:
-        soft: 4096
+        soft: 8192
         hard: 65536
     ports:
       - 1883:1883
