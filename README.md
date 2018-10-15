@@ -8,12 +8,14 @@ I1820 works with LoRa and LAN protocol
 so run them by your choices.
 
 ## I1820 Services
+Please consider that in deployment you can change these ports.
 
 | Service          | Abbr  | Port     |
 | ---------------- |:-----:| --------:|
 | Project Manager  | pm    | 1375/tcp |
 | Link             | link  | 1372/tcp |
 | Data Manager     | dm    | 1373/tcp |
+| WebBackend       | wb    | 1994/tcp |
 
 ## MQTT Link
 I1820 support many protocols like lan and lora,
