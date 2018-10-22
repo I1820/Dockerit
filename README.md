@@ -5,7 +5,7 @@
 ## Introduction
 Run I1820 on dockers with no pain.
 
-## Step by Step
+## Step by Step :baby:
 1. Clone
 ```sh
 git clone https://github.com/I1820/Dockerit
