@@ -28,6 +28,10 @@ git clone https://github.com/I1820/pm
 ```sh
 ./start.sh pm
 ```
+7. Check `link` configuration and run its docker.
+```sh
+./start.sh link
+```
 
 ## I1820 Services
 Please consider that in deployment you can change these ports.
