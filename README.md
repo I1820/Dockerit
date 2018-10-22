@@ -14,12 +14,17 @@ git clone https://github.com/I1820/Dockerit
 ```sh
 ./start.sh mongodb
 ```
-3. Clone `pm` component repository
+3. Start Portainer and Prometheus.
+```sh
+./start.sh portainer
+./start.sh prometheus
+```
+4. Clone `pm` component repository
 ```sh
 git clone https://github.com/I1820/pm
 ```
-4. Create database indexes and run `runme.sh` in `pm`.
-5. Check `pm` configuration and run its docker.
+5. Create database indexes and run `runme.sh` in `pm`.
+6. Check `pm` configuration and run its docker.
 ```sh
 ./start.sh pm
 ```
