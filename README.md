@@ -6,10 +6,22 @@
 Run I1820 on dockers with no pain.
 
 ## Step by Step
-1. Clone `git clone https://github.com/I1820/Dockerit`
-2. Start MongoDB database and configure its replication if you want.
+1. Clone
+```sh
+git clone https://github.com/I1820/Dockerit
 ```
+2. Start MongoDB database and configure its replication if you want.
+```sh
 ./start.sh mongodb
+```
+3. Clone `pm` component repository
+```sh
+git clone https://github.com/I1820/pm
+```
+4. Create database indexes and run `runme.sh` in `pm`.
+5. Check `pm` configuration and run its docker.
+```sh
+./start.sh pm
 ```
 
 ## I1820 Services
