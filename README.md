@@ -41,4 +41,6 @@ Please consider that in deployment you can change these ports.
 | Project Manager  | pm    | 1375/tcp |
 | Link             | link  | 1372/tcp |
 | Data Manager     | dm    | 1373/tcp |
-| WebBackend       | wb    | 1994/tcp |
+| Web Backend      | wb    | 1994/tcp |
+| Web Frontend     | front | 1820/tcp |
+| Weather Forecasting | wf | 6976/tcp |
