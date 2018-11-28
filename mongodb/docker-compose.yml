@@ -10,6 +10,7 @@ services:
       --replSet avidnet
     volumes:
       - ./mongo/data:/data/db
+
   mongo-express:
     image: mongo-express
     restart: always

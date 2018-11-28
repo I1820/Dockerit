@@ -6,29 +6,44 @@
 Run I1820 on dockers with no pain.
 
 ## Step by Step :baby:
-1. Clone
+1. Clone `Dockerit` repository.
 ```sh
-git clone https://github.com/I1820/Dockerit
+git clone https://github.com/I1820/Dockerit && cd Dockerit
 ```
-2. Start MongoDB database and configure its replication if you want.
+2. Start MongoDB database and configure its **replication** if you want.
 ```sh
-./start.sh mongodb
+./start.sh mongodb up -d
 ```
 3. Start Portainer and Prometheus.
 ```sh
-./start.sh portainer
-./start.sh prometheus
+./start.sh portainer up -d
+./start.sh prometheus up -d
 ```
-4. Clone `pm` component repository
+4. Start vernemq and configure its authentication handler's urls.
 ```sh
-git clone https://github.com/I1820/pm
+./start.sh vernemq up -d
 ```
-5. Create database indexes and run `runme.sh` in `pm`.
-6. Check `pm` configuration and run its docker.
+5. Clone `pm` component repository.
 ```sh
-./start.sh pm
+git clone https://github.com/I1820/pm && cd pm
 ```
-7. Check `link` configuration and run its docker.
+6. Create database indexes. Please note that you can create them manually and without grift.
+```sh
+buffalo task mongo
+```
+7. Run `runme.sh`
+```sh
+./runme.sh
+```
+8. Check `pm` configurations in `.env` and run its docker or executable. Please note that pm passes these configuration
+to project's dockers so they must work there too.
+```sh
+./start.sh pm up -d
+```
+```
+go build && ./pm
+```
+8. Check `link` configurations in `.env` and run its docker or executable.
 ```sh
 ./start.sh link
 ```
