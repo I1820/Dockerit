@@ -43,7 +43,7 @@ to project's dockers so they must work there too.
 ```
 go build && ./pm
 ```
-8. Check `link` configurations in `.env` and run its docker.
+8. Check `link` configurations in `.env` and run its docker or executable.
 ```sh
 ./start.sh link
 ```
