@@ -30,5 +30,5 @@ scrape_configs:
     scheme: http
     static_configs:
       - targets:
-        - 172.17.0.1:8080 # pm
-        - 172.17.0.1:1372 # dm
+        - 172.17.0.1:1372 # link
+        - 172.17.0.1:8888 # vernemq broker

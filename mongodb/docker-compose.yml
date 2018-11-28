@@ -6,7 +6,15 @@ services:
     restart: always
     ports:
       - 27017:27017
+    command: # comment out following section if you do not need replication. for more information about replication see I1820/mongo.
+      --replSet avidnet
     volumes:
       - ./mongo/data:/data/db
-    command:
-      --replSet avidnet
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    links:
+      - mongodb:mongo
