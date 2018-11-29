@@ -43,9 +43,38 @@ to project's dockers so they must work there too.
 ```
 go build && ./pm
 ```
-8. Check `link` configurations in `.env` and run its docker or executable.
+9. Clone `link` component repository.
 ```sh
-./start.sh link
+git clone https://github.com/I1820/link && cd link
+```
+10. Check `link` configurations in `.env` and run its docker or executable.
+```sh
+./start.sh link up -d
+```
+```sh
+go build && ./link
+```
+11. Clone `dm` component respository
+```sh
+git clone https://github.com/I1820/dm && cd dm
+```
+12. Check `dm` configurations in `.env` and run its docker or executable.
+```sh
+./start.sh dm up -d
+```
+```sh
+go build && ./dm
+```
+13. Clone `backend` component repository
+```sh
+git clone https://github.com/I1820/backend && cd backend
+```
+14. Check `backend` configurations in `.env` and run its docker or executable.
+```sh
+./start.sh backend up -d
+```
+```sh
+go build && ./backend
 ```
 
 ## I1820 Services
