@@ -6,76 +6,66 @@
 Run I1820 on dockers with no pain.
 
 ## Step by Step :baby:
+These steps describe the procedure for running the dockerized version of I1820. You can build
+each module from the source based on its readme.
+
 1. Clone `Dockerit` repository.
 ```sh
 git clone https://github.com/I1820/Dockerit && cd Dockerit
 ```
+
 2. Start MongoDB database and configure its **replication** if you want.
 ```sh
 ./start.sh mongodb up -d
 ```
+
 3. Start Portainer and Prometheus.
 ```sh
 ./start.sh portainer up -d
 ./start.sh prometheus up -d
 ```
+
 4. Start vernemq and configure its authentication handler's urls.
 ```sh
 ./start.sh vernemq up -d
 ```
+
 5. Clone `pm` component repository.
 ```sh
 git clone https://github.com/I1820/pm && cd pm
 ```
+
 6. Create database indexes. Please note that you can create them manually and without grift.
 ```sh
 buffalo task mongo
 ```
+
 7. Run `runme.sh`
 ```sh
 ./runme.sh
 ```
+
 8. Check `pm` configurations in `.env` and run its docker or executable. Please note that pm passes these configuration
 to project's dockers so they must work there too.
 ```sh
 ./start.sh pm up -d
 ```
-```
-go build && ./pm
-```
-9. Clone `link` component repository.
-```sh
-git clone https://github.com/I1820/link && cd link
-```
-10. Check `link` configurations in `.env` and run its docker or executable.
+
+9. Check `link` configurations in `.env` and run its docker or executable.
 ```sh
 ./start.sh link up -d
 ```
-```sh
-go build && ./link
-```
-11. Clone `dm` component respository
-```sh
-git clone https://github.com/I1820/dm && cd dm
-```
-12. Check `dm` configurations in `.env` and run its docker or executable.
+
+10. Check `dm` configurations in `.env` and run its docker or executable.
 ```sh
 ./start.sh dm up -d
 ```
-```sh
-go build && ./dm
-```
-13. Clone `backend` component repository
-```sh
-git clone https://github.com/I1820/backend && cd backend
-```
-14. Check `backend` configurations in `.env` and run its docker or executable.
+
+11. Check `backend` configurations in `.env` and run its docker or executable.
 ```sh
 ./start.sh backend up -d
 ```
-```sh
-go build && ./backend
-```
+
 
 ## I1820 Services
 Please consider that in deployment you can change these ports with caution.
