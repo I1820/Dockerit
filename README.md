@@ -45,23 +45,33 @@ buffalo task mongo
 ./runme.sh
 ```
 
-8. Check `pm` configurations in `.env` and run its docker or executable. Please note that pm passes these configuration
+8. Check `pm` configurations and run its docker. Please note that pm passes these configuration
 to project's dockers so they must work there too.
 ```sh
 ./start.sh pm up -d
 ```
 
-9. Check `link` configurations in `.env` and run its docker or executable.
+9. Check `link` configurations and run its docker.
 ```sh
 ./start.sh link up -d
 ```
 
-10. Check `dm` configurations in `.env` and run its docker or executable.
+10. Check `dm` configurations and run its docker.
 ```sh
 ./start.sh dm up -d
 ```
 
-11. Check `backend` configurations in `.env` and run its docker or executable.
+11. Clone `backend` component repository.
+```sh
+git clone https://github.com/I1820/backend && cd backend
+```
+
+12. Create database indexes. Please note that you can create them manually and without grift.
+```sh
+buffalo task mongo
+```
+
+13. Check `backend` configurations and run its docker.
 ```sh
 ./start.sh backend up -d
 ```
