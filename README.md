@@ -14,7 +14,8 @@ each module from the source based on its readme.
 git clone https://github.com/I1820/Dockerit && cd Dockerit
 ```
 
-2. Start MongoDB database and configure its **replication** if you want.
+2. Start MongoDB database and configure its **replication** if you want. Please do not expose mongodb on `0.0.0.0` if your machine have public IP.
+
 ```sh
 ./start.sh mongodb up -d
 ```
