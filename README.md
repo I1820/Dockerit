@@ -14,13 +14,12 @@ each module from the source based on its readme.
 git clone https://github.com/I1820/Dockerit && cd Dockerit
 ```
 
-2. Start MongoDB database and configure its **replication** if you want. Please do not expose mongodb on `0.0.0.0` if your machine have public IP.
-
+2. Start MongoDB database and configure its **replication** if you want. Please do not expose mongodb on `0.0.0.0` if your machine have public IP. Change remote ip binding in `mongodb/docker-compose.yml` with `remote_ip:remote_port:local_port`.
 ```sh
 ./start.sh mongodb up -d
 ```
 
-3. Start Portainer and Prometheus.
+3. Start Portainer and Prometheus. Please do not expose them on `0.0.0.0` if your machine have public IP.
 ```sh
 ./start.sh portainer up -d
 ./start.sh prometheus up -d
