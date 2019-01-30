@@ -2,16 +2,16 @@ version: "3"
 
 services:
   loraserver:
-    image: loraserver/loraserver:1
+    image: loraserver/loraserver
     restart: always
     volumes:
       - ./configuration/loraserver:/etc/loraserver
 
   appserver:
-    image: loraserver/lora-app-server:1
+    image: loraserver/lora-app-server
     restart: always
     ports:
-      - 7070:8080
+      - 8080:8080
     volumes:
       - ./configuration/lora-app-server:/etc/lora-app-server
 
