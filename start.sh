@@ -19,8 +19,8 @@ start-loraserver() {
         docker-compose -f loraserver.io/docker-compose.yml $@
 }
 
-start-lanserver() {
-        docker-compose -f lanserver/docker-compose.yml $@
+start-rabbitmq() {
+        docker-compose -f rabbitmq/docker-compose.yml $@
 }
 
 start-mongodb() {
@@ -97,7 +97,6 @@ usage() {
         echo "link       docker-compose i1820/link"
         echo
         echo "protocols:"
-        echo "lanserver         docker-compose i1820/lanserver"
         echo "loraserver        docker-compose brocaar/loraserver"
         echo
 }
