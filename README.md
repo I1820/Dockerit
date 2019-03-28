@@ -19,59 +19,64 @@ git clone https://github.com/I1820/Dockerit && cd Dockerit
 ./start.sh mongodb up -d
 ```
 
-3. Start Portainer and Prometheus. Please do not expose them on `0.0.0.0` if your machine have public IP.
+3. Start RabbitMQ. Please do not expose it on `0.0.0.0` if your machine has public IP.
+```sh
+./start.sh rabbitmq up -d
+```
+
+4. Start Portainer and Prometheus. Please do not expose them on `0.0.0.0` if your machine has public IP.
 ```sh
 ./start.sh portainer up -d
 ./start.sh prometheus up -d
 ```
 
-4. Start vernemq and configure its authentication handler's urls.
+5. Start vernemq and configure its authentication handler's urls.
 ```sh
 ./start.sh vernemq up -d
 ```
 
-5. Clone `pm` component repository.
+6. Clone `pm` component repository.
 ```sh
 git clone https://github.com/I1820/pm && cd pm
 ```
 
-6. Create database indexes. Please note that you can create them manually and without grift.
+7. Create database indexes. Please note that you can create them manually and without grift.
 ```sh
 buffalo task mongo
 ```
 
-7. Run `runme.sh`
+8. Run `runme.sh`
 ```sh
 ./runme.sh
 ```
 
-8. Check `pm` configurations and run its docker. Please note that pm passes these configuration
+9. Check `pm` configurations and run its docker. Please note that pm passes these configuration
 to project's dockers so they must work there too.
 ```sh
 ./start.sh pm up -d
 ```
 
-9. Check `link` configurations and run its docker.
+10. Check `link` configurations and run its docker.
 ```sh
 ./start.sh link up -d
 ```
 
-10. Check `dm` configurations and run its docker.
+11. Check `dm` configurations and run its docker.
 ```sh
 ./start.sh dm up -d
 ```
 
-11. Clone `backend` component repository.
+12. Clone `backend` component repository.
 ```sh
 git clone https://github.com/I1820/backend && cd backend
 ```
 
-12. Create database indexes. Please note that you can create them manually and without grift.
+13. Create database indexes. Please note that you can create them manually and without grift.
 ```sh
 buffalo task mongo
 ```
 
-13. Check `backend` configurations and run its docker.
+14. Check `backend` configurations and run its docker.
 ```sh
 ./start.sh backend up -d
 ```
