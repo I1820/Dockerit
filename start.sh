@@ -75,6 +75,12 @@ start-upremove() {
         docker ps -a --filter name="rd_*" --format "{{.ID}}" | xargs docker rm -f
 }
 
+start-required() {
+        start-mongodb $@
+        start-rabbitmq $@
+        start-vernemq $@
+}
+
 usage() {
         echo "usage: start.sh <service> [args]"
         echo "services:"
@@ -89,7 +95,7 @@ usage() {
         echo
         echo "required:"
         echo "mongodb    docker-compose mongodb"
-        echo "redis      docker-compose redis:alpine"
+        echo "rabbitmq   docker-compose rabbitmq"
         echo "vernemq    docker-compose erlio/docker-vernemq"
         echo
         echo "i1820:"
