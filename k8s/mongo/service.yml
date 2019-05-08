@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-service
+  namespace: i1820
+spec:
+  ports:
+    - port: 27017

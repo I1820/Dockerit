@@ -1,0 +1,29 @@
+apiVersion: apps/v1beta2
+kind: ReplicaSet
+metadata:
+  name: mongo-express
+  namespace: i1820
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo-express
+  template:
+    metadata:
+      labels:
+        app: mongo-express
+    spec:
+      containers:
+        - name: mongo-express
+          image: mongo-express
+          env:
+            - name: ME_CONFIG_OPTIONS_EDITORTHEME
+              value: "ambiance"
+            - name: ME_CONFIG_MONGODB_SERVER
+              value: "mongo-service"
+            - name: ME_CONFIG_BASICAUTH_USERNAME
+              value: "admin"
+            - name: ME_CONFIG_BASICAUTH_PASSWORD
+              value: "admin"
+          ports:
+            - containerPort: 8081
